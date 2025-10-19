@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<robot name="satellite_2d">
+  
+  <!-- ==================== BASE LINK (SATELLITE BODY) ==================== -->
+  <link name="satellite_body">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="2500.0"/>
+      <!-- Rectangular box inertia: 5m × 2m × 0.3m -->
+      <!-- Ixx = m(h²+d²)/12 = 2500*(2²+0.3²)/12 = 852.1875 -->
+      <!-- Iyy = m(L²+d²)/12 = 2500*(5²+0.3²)/12 = 5227.0833 -->
+      <!-- Izz = m(L²+h²)/12 = 2500*(5²+2²)/12 = 6041.6667 (CRITICAL for 2D rotation) -->
+      <inertia ixx="852.1875" iyy="5227.0833" izz="6041.6667"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+    </inertial>
+  </link>
+
+  <!-- Note: No joints needed. This is a rigid body.
+       The floating base (6 DOF) is handled by SPART when loading. -->
+
+</robot>

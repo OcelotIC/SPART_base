@@ -6,7 +6,7 @@ clear all; close all; clc;
 
 %% Setup paths (adjust as needed)
 % Add SPART paths
-addpath(genpath('../src'));
+%addpath(genpath('../src'));
 % Add CasADi path (adjust to your CasADi installation)
 % addpath('/path/to/casadi');
 
